@@ -11,17 +11,16 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
-    @sort = params[:sort]||'id'
-    if @sort=='id'
-       @movies = Movie.all
-    else
-       @movies = Movie.order[@sort]
+    @movie = Movie.all
+    @sort = params[:sort] 
+    if @sort
+      @movie = Movie.order(@sort)
     end
+      
   end
 
   def new
-    # default: render 'new' template
+   default: render 'new' template
   end
 
   def create
