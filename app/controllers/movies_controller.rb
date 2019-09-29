@@ -16,11 +16,10 @@ class MoviesController < ApplicationController
     if @sort
       @movie = Movie.order(@sort)
     end
-      
   end
 
   def new
-   default: render 'new' template
+   #default: render 'new' template
   end
 
   def create
