@@ -24,8 +24,8 @@ class MoviesController < ApplicationController
       redirect_to :sort => @sort, :ratings => @ratings and return
     end
 
-   @movies = Movie.where(rating: @ratings)
-  
+    @movies = Movie.where(rating: @ratings)
+   
     if @sort
       @movies = @movies.where(rating: @ratings).order(@sort)
     else
