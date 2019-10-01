@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
 
   def index
     @all_ratings = Movie.ratings 
-    @selected_ratings = @all_ratings 
+    @ratings = @all_ratings 
     @ratings =  params[:ratings].keys if params[:ratings] 
 
     @movies = Movie.all
