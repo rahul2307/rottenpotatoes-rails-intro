@@ -18,7 +18,7 @@ class MoviesController < ApplicationController
     @movies = Movie.where(rating: @selected_ratings)
     @sort=params[:sort]
     if @sort
-      @movies = @movies.order(@sort)
+      @movies = @movies.where(rating: @selected_ratings).order(@sort)
     end
   end
 
